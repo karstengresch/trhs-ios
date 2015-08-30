@@ -22,22 +22,11 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let baseUrl = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)")
+    let baseUrl = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)/")
     let forecastUrl = NSURL(string: "37.8267,-122.423", relativeToURL: baseUrl)
     
-    if  let plistPath = NSBundle.mainBundle().pathForResource("CurrentWeather", ofType: "plist"),
-      let mainWeather = NSDictionary(contentsOfFile: plistPath),
-      let currentWeatherDictionary = mainWeather["currently"] as? [String: AnyObject]
-      {
-        println(plistPath)
-        
-        let currentWeather = CurrentWeather(weatherDictionary: currentWeatherDictionary)
-        
-        currentTemperatureLabel?.text = "\(currentWeather.temperature)°"
-        currentHumidityLabel?.text = "\(currentWeather.humidity)%"
-        currentPrecipitationLabel?.text = "\(currentWeather.precipProbability)%"
-        
-      }
+    let weatherData = NSData(contentsOfURL: forecastUrl!, options: nil, error: nil)
+    println(weatherData)
   }
 
   override func didReceiveMemoryWarning() {
