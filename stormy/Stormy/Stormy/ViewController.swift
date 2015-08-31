@@ -25,8 +25,21 @@ class ViewController: UIViewController {
     let baseUrl = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)/")
     let forecastUrl = NSURL(string: "37.8267,-122.423", relativeToURL: baseUrl)
     
-    let weatherData = NSData(contentsOfURL: forecastUrl!, options: nil, error: nil)
-    println(weatherData)
+//    let weatherData = NSData(contentsOfURL: forecastUrl!, options: nil, error: nil)
+//    println(weatherData)
+    let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+    let session = NSURLSession(configuration: configuration)
+    let request = NSURLRequest(URL: forecastUrl!)
+    let dataTask = session.dataTaskWithRequest(request, completionHandler:
+      { (data: NSData!, response: NSURLResponse!, error: NSError! )
+        -> Void in println("Working in background")
+        println(data)
+        
+      })
+    
+    dataTask.resume()
+    println("Working in main")
+    
   }
 
   override func didReceiveMemoryWarning() {
