@@ -16,6 +16,7 @@
 		3D21959A1B90474B0078FA94 /* CurrentWeather.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D2195991B90474B0078FA94 /* CurrentWeather.plist */; };
 		3D21959C1B9047E10078FA94 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D21959B1B9047E10078FA94 /* CurrentWeather.swift */; };
 		3DB8DDBA1B94921B00F02B33 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8DDB91B94921B00F02B33 /* NetworkOperation.swift */; };
+		3DFB55951B957F7B00EB91B9 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB55941B957F7B00EB91B9 /* ForecastService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		3D2195991B90474B0078FA94 /* CurrentWeather.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentWeather.plist; sourceTree = "<group>"; };
 		3D21959B1B9047E10078FA94 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		3DB8DDB91B94921B00F02B33 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		3DFB55941B957F7B00EB91B9 /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				3DB8DDB91B94921B00F02B33 /* NetworkOperation.swift */,
 				3D2195791B90443C0078FA94 /* ViewController.swift */,
 				3D21959B1B9047E10078FA94 /* CurrentWeather.swift */,
+				3DFB55941B957F7B00EB91B9 /* ForecastService.swift */,
 				3D21957B1B90443C0078FA94 /* Main.storyboard */,
 				3D21957E1B90443C0078FA94 /* Images.xcassets */,
 				3D2195801B90443C0078FA94 /* LaunchScreen.xib */,
@@ -225,6 +228,7 @@
 				3DB8DDBA1B94921B00F02B33 /* NetworkOperation.swift in Sources */,
 				3D21957A1B90443C0078FA94 /* ViewController.swift in Sources */,
 				3D21959C1B9047E10078FA94 /* CurrentWeather.swift in Sources */,
+				3DFB55951B957F7B00EB91B9 /* ForecastService.swift in Sources */,
 				3D2195781B90443C0078FA94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
