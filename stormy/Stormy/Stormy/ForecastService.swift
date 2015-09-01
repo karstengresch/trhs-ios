@@ -25,6 +25,8 @@ struct ForecastService {
       let networkOperation = NetworkOperation(url: forecastURL)
       networkOperation.downloadJsonFromUrl {
         (let JSONDictionary) in
+        let currentWeather = self.currentWeatherFromJsonDictionary(JSONDictionary)
+        completion(currentWeather)
       }
       
     } else {
