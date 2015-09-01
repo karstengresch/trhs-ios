@@ -10,35 +10,41 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  private let forecastAPIKey = "830b7f5b95cc1d9c4c511ba42ffb6eb5"
-  
-
-  
-  
   @IBOutlet weak var currentTemperatureLabel: UILabel?
-    @IBOutlet weak var currentHumidityLabel: UILabel?
-    @IBOutlet weak var currentPrecipitationLabel: UILabel?
+  @IBOutlet weak var currentHumidityLabel: UILabel?
+  @IBOutlet weak var currentPrecipitationLabel: UILabel?
+  
+  let coordinate: (latitude: Double, longitude: Double) = (37.8267,-122.423)
+
+  private let forecastAPIKey = "830b7f5b95cc1d9c4c511ba42ffb6eb5"
+
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let baseUrl = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)/")
-    let forecastUrl = NSURL(string: "37.8267,-122.423", relativeToURL: baseUrl)
-    
-//    let weatherData = NSData(contentsOfURL: forecastUrl!, options: nil, error: nil)
-//    println(weatherData)
-    let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-    let session = NSURLSession(configuration: configuration)
-    let request = NSURLRequest(URL: forecastUrl!)
-    let dataTask = session.dataTaskWithRequest(request, completionHandler:
-      { (data: NSData!, response: NSURLResponse!, error: NSError! )
-        -> Void in println("Working in background")
-        println(data)
-        
-      })
-    
-    dataTask.resume()
-    println("Working in main")
+    let forecastService = ForecastService(APIKey: forecastAPIKey)
+    forecastService.getForecast(coordinate.latitude, longitude: coordinate.longitude) {
+      (let currently) in
+
+      if let currentWeather = currently {
+        dispatch_async(dispatch_get_main_queue()) {
+          
+          if let temperature = currentWeather.temperature {
+            self.currentTemperatureLabel?.text = "\(temperature)°"
+          }
+          
+          if let humidity = currentWeather.humidity {
+            self.currentHumidityLabel?.text = "\(humidity)%"
+          }
+          
+          if let precipitation = currentWeather.precipProbability {
+            self.currentPrecipitationLabel?.text = "\(precipitation)"
+          }
+          
+        }
+      }
+      
+    }
     
   }
 

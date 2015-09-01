@@ -9,6 +9,7 @@
 import Foundation
 
 struct CurrentWeather {
+  
   let temperature: Int?
   let humidity: Int?
   let precipProbability: Int?

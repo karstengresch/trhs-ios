@@ -12,28 +12,29 @@ class NetworkOperation {
   
   lazy var config: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
   lazy var session: NSURLSession = NSURLSession(configuration: self.config)
-  let queryUrl: NSURL
+  let queryURL: NSURL
   
-  typealias JsonDictionaryCompletion = ([String: AnyObject]? -> Void)
+  typealias JSONDictionaryCompletion = ([String: AnyObject]? -> Void)
   
   init(url: NSURL) {
-    self.queryUrl = url
+    self.queryURL = url
   }
   
-  func downloadJsonFromUrl (completion: JsonDictionaryCompletion) {
+    func downloadJSONFromURL(completion: JSONDictionaryCompletion) {
     
-    let request: NSURLRequest = NSURLRequest(URL: queryUrl)
+    let request = NSURLRequest(URL: queryURL)
+    println("\(queryURL)")
     
     let dataTask = session.dataTaskWithRequest(request) {
       (let data, let response, let error) in
       
       if let httpResponse = response as? NSHTTPURLResponse {
-        switch(httpResponse.statusCode)
-        {
+        switch httpResponse.statusCode {
         case 200:
           let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String: AnyObject]
+          completion(jsonDictionary)
         default:
-          println("GET request not successful: \(httpResponse.statusCode))")
+          println("GET request not successful: \(httpResponse.statusCode)")
         }
         
       } else {

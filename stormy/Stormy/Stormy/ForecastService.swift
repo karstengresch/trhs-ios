@@ -9,21 +9,22 @@
 import Foundation
 
 struct ForecastService {
-  let forecastAPIKey: String
-  let forecastURL: NSURL?
   
-  init (APIKey: String) {
-    self.forecastAPIKey = APIKey
-    forecastURL = NSURL(string: "https://api.forecast.io/\(forecastAPIKey)")
+  let forecastAPIKey: String
+  let forecastBaseURL: NSURL?
+  
+  init(APIKey: String) {
+     forecastAPIKey = APIKey
+     forecastBaseURL = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)")
     
   }
   
-  
   func getForecast(latitude: Double, longitude: Double, completion: (CurrentWeather? -> Void)) {
-    if let forecastURL = NSURL(string: "\(latitude), \(longitude)", relativeToURL: self.forecastURL) {
-      
+   
+    if let forecastURL = NSURL(string: "\(latitude),\(longitude)", relativeToURL: forecastBaseURL) {
+      println("forecastBaseURL is: \(forecastBaseURL)")
       let networkOperation = NetworkOperation(url: forecastURL)
-      networkOperation.downloadJsonFromUrl {
+      networkOperation.downloadJSONFromURL {
         (let JSONDictionary) in
         let currentWeather = self.currentWeatherFromJsonDictionary(JSONDictionary)
         completion(currentWeather)
