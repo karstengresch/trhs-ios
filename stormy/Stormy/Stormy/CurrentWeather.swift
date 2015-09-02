@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum icon: String {
+enum Icon: String {
   case ClearDay = "clear-day"
   case ClearNight = "clear-night"
   case Rain = "rain"
@@ -28,42 +28,60 @@ struct CurrentWeather {
   let humidity: Int?
   let precipProbability: Int?
   let summary: String?
-  let icon: UIImage? = UIImage(named: "default.png")
+  var icon: UIImage? = UIImage(named: "default.png")
   
-  init(weatherDictionary: [String: AnyObject] ) {
+  init(weatherDictionary: [String: AnyObject]) {
     temperature = weatherDictionary["temperature"] as? Int
-    if let humidityFloat = weatherDictionary["humidity"] as? Double
-    {
-     humidity = Int(humidityFloat * 100)
+    
+    if let humidityFloat = weatherDictionary["humidity"] as? Double {
+      humidity = Int(humidityFloat * 100)
     } else {
       humidity = nil
     }
     
-    if let precipFloat = weatherDictionary["precipProbability"] as? Double
-    {
+    if let precipFloat = weatherDictionary["precipProbability"] as? Double {
       precipProbability = Int(precipFloat * 100)
     } else {
       precipProbability = nil
     }
     
-    if let iconString = weatherDictionary["icon"] as? String {
-        icon = weatherImageFromIconString(iconString)
-    } else {
-      
-    }
-    
-    
     summary = weatherDictionary["summary"] as? String
     
-    
+    if let iconString = weatherDictionary["icon"] as? String {
+      icon = weatherImageFromIconString(iconString)
+    }
   }
   
   func weatherImageFromIconString(iconString: String) -> UIImage? {
     var imageName: String
     
-    return UIImage(named: imageName)
+    if let iconValue = Icon(rawValue: iconString) {
+      switch iconValue {
+      case .ClearDay:
+        imageName = "clear-day.png"
+      case .ClearNight:
+        imageName = "clear-night.png"
+      case .Rain:
+        imageName = "rain.png"
+      case .Snow:
+        imageName = "snow.png"
+      case .Sleet:
+        imageName = "sleet.png"
+      case .Wind:
+        imageName = "wind.png"
+      case .Fog:
+        imageName = "fog.png"
+      case .Cloudy:
+        imageName = "cloudy.png"
+      case .PartlyCloudyDay:
+        imageName = "cloudy-day.png"
+      case .PartlyCloudyNight:
+        imageName = "cloudy-night.png"
+      }
+    } else {
+      imageName = "default.png"
+    }
     
+    return UIImage(named: imageName)
   }
-  
 }
-
