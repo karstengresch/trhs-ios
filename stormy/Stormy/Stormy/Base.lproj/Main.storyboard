@@ -53,11 +53,24 @@
                                     <constraint firstAttribute="width" constant="60" id="QM3-Em-lRY"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berlin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tea-6T-eux">
+                                <rect key="frame" x="258" y="124" width="48.5" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTy-1d-Wv9">
+                                <rect key="frame" x="256" y="510" width="88" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.36078431372549019" green="0.53333333333333333" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ggE-hj-LtW" firstAttribute="top" secondItem="1HG-Uq-LSZ" secondAttribute="bottom" constant="8" id="0GZ-l2-arj"/>
+                            <constraint firstAttribute="centerX" secondItem="HTy-1d-Wv9" secondAttribute="centerX" id="2mF-oL-Qbe"/>
                             <constraint firstItem="1HG-Uq-LSZ" firstAttribute="top" secondItem="oAp-Hd-dcF" secondAttribute="bottom" constant="7" id="4JF-2H-Vdb"/>
                             <constraint firstItem="ggE-hj-LtW" firstAttribute="centerX" secondItem="1HG-Uq-LSZ" secondAttribute="centerX" constant="-17" id="B6d-Kr-uSY"/>
                             <constraint firstAttribute="centerY" secondItem="oAp-Hd-dcF" secondAttribute="centerY" id="BKk-e8-vaU"/>
@@ -65,8 +78,11 @@
                             <constraint firstAttribute="centerX" secondItem="f2E-lG-8p4" secondAttribute="centerX" id="Ggk-GH-b2K"/>
                             <constraint firstItem="B4U-uX-1XC" firstAttribute="centerX" secondItem="wFM-vd-XxT" secondAttribute="centerX" id="JbJ-xi-TZ1"/>
                             <constraint firstItem="oAp-Hd-dcF" firstAttribute="top" secondItem="f2E-lG-8p4" secondAttribute="bottom" constant="38" id="Lq0-wJ-eB7"/>
+                            <constraint firstItem="oAp-Hd-dcF" firstAttribute="top" secondItem="tea-6T-eux" secondAttribute="bottom" constant="58" id="SIJ-VR-XBd"/>
+                            <constraint firstItem="tea-6T-eux" firstAttribute="leading" secondItem="f2E-lG-8p4" secondAttribute="trailing" constant="8" id="SJi-iY-N0n"/>
                             <constraint firstAttribute="centerX" secondItem="oAp-Hd-dcF" secondAttribute="centerX" id="Y7l-4m-E5y"/>
                             <constraint firstItem="B4U-uX-1XC" firstAttribute="top" secondItem="oAp-Hd-dcF" secondAttribute="bottom" constant="8" id="aJd-Mm-4AD"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HTy-1d-Wv9" secondAttribute="bottom" constant="64" id="f3h-lR-tnr"/>
                             <constraint firstItem="oAp-Hd-dcF" firstAttribute="trailing" secondItem="1HG-Uq-LSZ" secondAttribute="trailing" id="fpH-mg-3nK"/>
                             <constraint firstItem="wFM-vd-XxT" firstAttribute="top" secondItem="B4U-uX-1XC" secondAttribute="bottom" constant="7.5" id="gGA-XL-NMP"/>
                             <constraint firstItem="ggE-hj-LtW" firstAttribute="centerX" secondItem="1HG-Uq-LSZ" secondAttribute="centerX" id="oLr-BD-rRc"/>
@@ -76,6 +92,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Ggk-GH-b2K"/>
                                 <exclude reference="ESr-HP-YcB"/>
                                 <exclude reference="B6d-Kr-uSY"/>
                             </mask>
@@ -86,6 +103,7 @@
                         <outlet property="currentPrecipitationLabel" destination="ggE-hj-LtW" id="yTt-9f-Er5"/>
                         <outlet property="currentTemperatureLabel" destination="oAp-Hd-dcF" id="Uzm-Gr-fKU"/>
                         <outlet property="currentWeatherIcon" destination="f2E-lG-8p4" id="avb-IU-f4o"/>
+                        <outlet property="currentWeatherSummary" destination="HTy-1d-Wv9" id="VJX-rj-xfr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
