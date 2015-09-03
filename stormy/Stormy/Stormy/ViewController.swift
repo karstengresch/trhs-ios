@@ -15,10 +15,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var currentPrecipitationLabel: UILabel?
   @IBOutlet weak var currentWeatherIcon: UIImageView?
   @IBOutlet weak var currentWeatherSummary: UILabel?
-  
-  @IBAction func refreshWeather(sender: UIButton) {
-    retreiveWeatherForecast()
-  }
+  @IBOutlet weak var refreshButton: UIButton?
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
   
   
   let coordinate: (latitude: Double, longitude: Double) = (37.8267,-122.423)
@@ -29,21 +27,11 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     retreiveWeatherForecast()
-
-    
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
-  }
-  
-  func getCrazy() {
-    if  let plistPath = NSBundle.mainBundle().pathForResource("CrazyInformation", ofType: "plist"),
-      let crazyInformation = NSDictionary(contentsOfFile: plistPath)
-    {
-      // do something
-    }
   }
   
   func retreiveWeatherForecast() {
@@ -74,10 +62,29 @@ class ViewController: UIViewController {
             self.currentWeatherSummary?.text = summary
           }
           
+          self.toggleRefreshAnimation(false)
+          
         }
       }
       
     }
+  }
+  
+  func toggleRefreshAnimation(on: Bool) {
+    refreshButton?.hidden = on
+    if on {
+      activityIndicator?.startAnimating()
+    } else {
+      activityIndicator?.stopAnimating()
+    }
+  }
+  
+  
+  
+  
+  @IBAction func refreshWeather(sender: UIButton) {
+    toggleRefreshAnimation(true)
+    retreiveWeatherForecast()
   }
 
 

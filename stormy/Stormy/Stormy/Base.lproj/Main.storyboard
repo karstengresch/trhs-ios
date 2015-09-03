@@ -74,6 +74,9 @@
                                     <action selector="refreshWeather:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ATv-qO-EoJ"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="5c2-Qe-FAF">
+                                <rect key="frame" x="290" y="62" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.36078431372549019" green="0.53333333333333333" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -101,6 +104,7 @@
                             <constraint firstItem="wFM-vd-XxT" firstAttribute="top" secondItem="B4U-uX-1XC" secondAttribute="bottom" constant="7.5" id="gGA-XL-NMP"/>
                             <constraint firstItem="HTy-1d-Wv9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wFM-vd-XxT" secondAttribute="bottom" constant="30" id="h5L-l0-fcu"/>
                             <constraint firstItem="tea-6T-eux" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yj6-To-lws" secondAttribute="bottom" constant="5" id="iyM-7v-giu"/>
+                            <constraint firstItem="Yj6-To-lws" firstAttribute="centerX" secondItem="5c2-Qe-FAF" secondAttribute="centerX" constant="0.5" id="jfR-Rd-vKJ"/>
                             <constraint firstItem="Yj6-To-lws" firstAttribute="leading" relation="lessThanOrEqual" secondItem="tea-6T-eux" secondAttribute="trailing" constant="-17" id="jtc-4u-tdn"/>
                             <constraint firstItem="f2E-lG-8p4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yj6-To-lws" secondAttribute="bottom" priority="750" constant="8" symbolic="YES" id="kvg-nL-MEp"/>
                             <constraint firstItem="Yj6-To-lws" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tea-6T-eux" secondAttribute="trailing" constant="-112" id="nhX-vu-CAZ"/>
@@ -108,6 +112,7 @@
                             <constraint firstAttribute="centerX" secondItem="Yj6-To-lws" secondAttribute="centerX" id="pL5-ha-JaJ"/>
                             <constraint firstItem="B4U-uX-1XC" firstAttribute="leading" secondItem="oAp-Hd-dcF" secondAttribute="leading" id="pSZ-wN-1TP"/>
                             <constraint firstAttribute="centerX" secondItem="f2E-lG-8p4" secondAttribute="centerX" constant="91" id="syf-cK-dNb"/>
+                            <constraint firstItem="Yj6-To-lws" firstAttribute="centerY" secondItem="5c2-Qe-FAF" secondAttribute="centerY" constant="-0.5" id="vKW-I8-Rbt"/>
                             <constraint firstItem="oAp-Hd-dcF" firstAttribute="leading" secondItem="B4U-uX-1XC" secondAttribute="trailing" constant="-97" id="wZT-0r-hSq"/>
                             <constraint firstItem="Yj6-To-lws" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="30" id="zcb-Tw-qNM"/>
                         </constraints>
@@ -123,11 +128,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="5c2-Qe-FAF" id="0aq-G7-xqk"/>
                         <outlet property="currentHumidityLabel" destination="wFM-vd-XxT" id="hy1-nK-KZe"/>
                         <outlet property="currentPrecipitationLabel" destination="ggE-hj-LtW" id="yTt-9f-Er5"/>
                         <outlet property="currentTemperatureLabel" destination="oAp-Hd-dcF" id="Uzm-Gr-fKU"/>
                         <outlet property="currentWeatherIcon" destination="f2E-lG-8p4" id="avb-IU-f4o"/>
                         <outlet property="currentWeatherSummary" destination="HTy-1d-Wv9" id="VJX-rj-xfr"/>
+                        <outlet property="refreshButton" destination="Yj6-To-lws" id="3fa-GF-TGY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
