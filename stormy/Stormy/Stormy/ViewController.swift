@@ -16,6 +16,11 @@ class ViewController: UIViewController {
   @IBOutlet weak var currentWeatherIcon: UIImageView?
   @IBOutlet weak var currentWeatherSummary: UILabel?
   
+  @IBAction func refreshWeather(sender: UIButton) {
+    retreiveWeatherForecast()
+  }
+  
+  
   let coordinate: (latitude: Double, longitude: Double) = (37.8267,-122.423)
 
   private let forecastAPIKey = "830b7f5b95cc1d9c4c511ba42ffb6eb5"
@@ -23,11 +28,29 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    retreiveWeatherForecast()
+
     
+  }
+
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  func getCrazy() {
+    if  let plistPath = NSBundle.mainBundle().pathForResource("CrazyInformation", ofType: "plist"),
+      let crazyInformation = NSDictionary(contentsOfFile: plistPath)
+    {
+      // do something
+    }
+  }
+  
+  func retreiveWeatherForecast() {
     let forecastService = ForecastService(APIKey: forecastAPIKey)
     forecastService.getForecast(coordinate.latitude, longitude: coordinate.longitude) {
       (let currently) in
-
+      
       if let currentWeather = currently {
         dispatch_async(dispatch_get_main_queue()) {
           
@@ -54,20 +77,6 @@ class ViewController: UIViewController {
         }
       }
       
-    }
-    
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  func getCrazy() {
-    if  let plistPath = NSBundle.mainBundle().pathForResource("CrazyInformation", ofType: "plist"),
-      let crazyInformation = NSDictionary(contentsOfFile: plistPath)
-    {
-      // do something
     }
   }
 
