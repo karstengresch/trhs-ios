@@ -28,8 +28,8 @@
                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFM-vd-XxT">
-                                <rect key="frame" x="203" y="428" width="49.5" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="88%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFM-vd-XxT">
+                                <rect key="frame" x="203" y="428" width="49.5" height="55"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HUMIDITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4U-uX-1XC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="HUMIDITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4U-uX-1XC">
                                 <rect key="frame" x="179" y="400" width="97" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,18 +59,25 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTy-1d-Wv9">
-                                <rect key="frame" x="256" y="510" width="88" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Summary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTy-1d-Wv9">
+                                <rect key="frame" x="256" y="534" width="88" height="26"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yj6-To-lws">
+                                <rect key="frame" x="278.5" y="50" width="43" height="43"/>
+                                <state key="normal" image="refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.36078431372549019" green="0.53333333333333333" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ggE-hj-LtW" firstAttribute="top" secondItem="1HG-Uq-LSZ" secondAttribute="bottom" constant="8" id="0GZ-l2-arj"/>
                             <constraint firstAttribute="centerX" secondItem="HTy-1d-Wv9" secondAttribute="centerX" id="2mF-oL-Qbe"/>
+                            <constraint firstItem="Yj6-To-lws" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="30" id="4Fp-7b-gDd"/>
                             <constraint firstItem="1HG-Uq-LSZ" firstAttribute="top" secondItem="oAp-Hd-dcF" secondAttribute="bottom" constant="7" id="4JF-2H-Vdb"/>
                             <constraint firstItem="ggE-hj-LtW" firstAttribute="centerX" secondItem="1HG-Uq-LSZ" secondAttribute="centerX" constant="-17" id="B6d-Kr-uSY"/>
                             <constraint firstAttribute="centerY" secondItem="oAp-Hd-dcF" secondAttribute="centerY" id="BKk-e8-vaU"/>
@@ -82,10 +89,12 @@
                             <constraint firstItem="tea-6T-eux" firstAttribute="leading" secondItem="f2E-lG-8p4" secondAttribute="trailing" constant="8" id="SJi-iY-N0n"/>
                             <constraint firstAttribute="centerX" secondItem="oAp-Hd-dcF" secondAttribute="centerX" id="Y7l-4m-E5y"/>
                             <constraint firstItem="B4U-uX-1XC" firstAttribute="top" secondItem="oAp-Hd-dcF" secondAttribute="bottom" constant="8" id="aJd-Mm-4AD"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HTy-1d-Wv9" secondAttribute="bottom" constant="64" id="f3h-lR-tnr"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HTy-1d-Wv9" secondAttribute="bottom" constant="40" id="f3h-lR-tnr"/>
                             <constraint firstItem="oAp-Hd-dcF" firstAttribute="trailing" secondItem="1HG-Uq-LSZ" secondAttribute="trailing" id="fpH-mg-3nK"/>
                             <constraint firstItem="wFM-vd-XxT" firstAttribute="top" secondItem="B4U-uX-1XC" secondAttribute="bottom" constant="7.5" id="gGA-XL-NMP"/>
+                            <constraint firstItem="HTy-1d-Wv9" firstAttribute="top" secondItem="wFM-vd-XxT" secondAttribute="bottom" constant="51" id="h5L-l0-fcu"/>
                             <constraint firstItem="ggE-hj-LtW" firstAttribute="centerX" secondItem="1HG-Uq-LSZ" secondAttribute="centerX" id="oLr-BD-rRc"/>
+                            <constraint firstAttribute="centerX" secondItem="Yj6-To-lws" secondAttribute="centerX" id="pL5-ha-JaJ"/>
                             <constraint firstItem="B4U-uX-1XC" firstAttribute="leading" secondItem="oAp-Hd-dcF" secondAttribute="leading" id="pSZ-wN-1TP"/>
                             <constraint firstAttribute="centerX" secondItem="f2E-lG-8p4" secondAttribute="centerX" constant="80" id="syf-cK-dNb"/>
                             <constraint firstItem="oAp-Hd-dcF" firstAttribute="leading" secondItem="B4U-uX-1XC" secondAttribute="trailing" constant="-97" id="wZT-0r-hSq"/>
@@ -112,5 +121,6 @@
     </scenes>
     <resources>
         <image name="default" width="30" height="30"/>
+        <image name="refresh" width="43" height="43"/>
     </resources>
 </document>
