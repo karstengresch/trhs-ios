@@ -46,6 +46,13 @@
                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="f2E-lG-8p4">
+                                <rect key="frame" x="190" y="108" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="05G-vL-oAs"/>
+                                    <constraint firstAttribute="width" constant="60" id="QM3-Em-lRY"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.36078431372549019" green="0.53333333333333333" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -55,13 +62,16 @@
                             <constraint firstItem="ggE-hj-LtW" firstAttribute="centerX" secondItem="1HG-Uq-LSZ" secondAttribute="centerX" constant="-17" id="B6d-Kr-uSY"/>
                             <constraint firstAttribute="centerY" secondItem="oAp-Hd-dcF" secondAttribute="centerY" id="BKk-e8-vaU"/>
                             <constraint firstItem="B4U-uX-1XC" firstAttribute="centerX" secondItem="wFM-vd-XxT" secondAttribute="centerX" constant="-7.5" id="ESr-HP-YcB"/>
+                            <constraint firstAttribute="centerX" secondItem="f2E-lG-8p4" secondAttribute="centerX" id="Ggk-GH-b2K"/>
                             <constraint firstItem="B4U-uX-1XC" firstAttribute="centerX" secondItem="wFM-vd-XxT" secondAttribute="centerX" id="JbJ-xi-TZ1"/>
+                            <constraint firstItem="oAp-Hd-dcF" firstAttribute="top" secondItem="f2E-lG-8p4" secondAttribute="bottom" constant="38" id="Lq0-wJ-eB7"/>
                             <constraint firstAttribute="centerX" secondItem="oAp-Hd-dcF" secondAttribute="centerX" id="Y7l-4m-E5y"/>
                             <constraint firstItem="B4U-uX-1XC" firstAttribute="top" secondItem="oAp-Hd-dcF" secondAttribute="bottom" constant="8" id="aJd-Mm-4AD"/>
                             <constraint firstItem="oAp-Hd-dcF" firstAttribute="trailing" secondItem="1HG-Uq-LSZ" secondAttribute="trailing" id="fpH-mg-3nK"/>
                             <constraint firstItem="wFM-vd-XxT" firstAttribute="top" secondItem="B4U-uX-1XC" secondAttribute="bottom" constant="7.5" id="gGA-XL-NMP"/>
                             <constraint firstItem="ggE-hj-LtW" firstAttribute="centerX" secondItem="1HG-Uq-LSZ" secondAttribute="centerX" id="oLr-BD-rRc"/>
                             <constraint firstItem="B4U-uX-1XC" firstAttribute="leading" secondItem="oAp-Hd-dcF" secondAttribute="leading" id="pSZ-wN-1TP"/>
+                            <constraint firstAttribute="centerX" secondItem="f2E-lG-8p4" secondAttribute="centerX" constant="80" id="syf-cK-dNb"/>
                             <constraint firstItem="oAp-Hd-dcF" firstAttribute="leading" secondItem="B4U-uX-1XC" secondAttribute="trailing" constant="-97" id="wZT-0r-hSq"/>
                         </constraints>
                         <variation key="default">
@@ -75,10 +85,14 @@
                         <outlet property="currentHumidityLabel" destination="wFM-vd-XxT" id="hy1-nK-KZe"/>
                         <outlet property="currentPrecipitationLabel" destination="ggE-hj-LtW" id="yTt-9f-Er5"/>
                         <outlet property="currentTemperatureLabel" destination="oAp-Hd-dcF" id="Uzm-Gr-fKU"/>
+                        <outlet property="currentWeatherIcon" destination="f2E-lG-8p4" id="avb-IU-f4o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="default" width="30" height="30"/>
+    </resources>
 </document>

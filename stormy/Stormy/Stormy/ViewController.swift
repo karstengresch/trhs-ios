@@ -13,6 +13,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var currentTemperatureLabel: UILabel?
   @IBOutlet weak var currentHumidityLabel: UILabel?
   @IBOutlet weak var currentPrecipitationLabel: UILabel?
+  @IBOutlet weak var currentWeatherIcon: UIImageView?
   
   let coordinate: (latitude: Double, longitude: Double) = (37.8267,-122.423)
 
