@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
   var objects = [AnyObject]()
-
+  let fruits = ["Apples", "Bananas", "Oranges", "Pineapples", "Watermelons", "Strawberries", "Raspberries", "Grapes", "Pomegranates", "Peaches", "Cherries", "Dates"]
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -51,18 +51,18 @@ class MasterViewController: UITableViewController {
   // MARK: - Table View
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
+    return fruits.count
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return objects.count
+    return fruits.count
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
-    let object = objects[indexPath.row] as! NSDate
-    cell.textLabel!.text = object.description
+    let fruit = fruits[indexPath.row]
+    cell.textLabel!.text = fruit
     return cell
   }
 
