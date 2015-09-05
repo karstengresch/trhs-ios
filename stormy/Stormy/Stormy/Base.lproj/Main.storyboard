@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ETO-Mc-8DL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
+        <!--Weekly Table View Controller-->
+        <scene sceneID="vca-KT-oEA">
+            <objects>
+                <tableViewController id="gEv-tw-lI0" customClass="WeeklyTableViewController" customModule="Stormy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wyx-yj-D1G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="gFe-dA-tqI">
+                            <rect key="frame" x="0.0" y="64" width="600" height="150"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="72°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fk-EM-HRs">
+                                    <rect key="frame" x="304" y="56" width="54.5" height="42"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="CuJ-Di-PoK">
+                                    <rect key="frame" x="245" y="53" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="igu-SX-O3E"/>
+                                        <constraint firstAttribute="height" constant="50" id="pbh-hF-koW"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rain 0%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ax-Xw-Ed3">
+                                    <rect key="frame" x="8" y="133.5" width="41.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↑63º↓39º" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vF2-GD-3d4">
+                                    <rect key="frame" x="533" y="127" width="59" height="14.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcatraz Island" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-tt-ltm">
+                                    <rect key="frame" x="264" y="109" width="71" height="14.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.27479079365730286" green="0.5571715235710144" blue="0.89757764339447021" alpha="0.72999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="vF2-GD-3d4" secondAttribute="trailing" constant="8" id="ETe-X3-RtM"/>
+                                <constraint firstAttribute="centerX" secondItem="CuJ-Di-PoK" secondAttribute="centerX" constant="30" id="GfL-BO-rs9"/>
+                                <constraint firstAttribute="bottom" secondItem="4Ax-Xw-Ed3" secondAttribute="bottom" constant="2" id="HTn-n2-mM2"/>
+                                <constraint firstItem="vF2-GD-3d4" firstAttribute="top" secondItem="TCe-tt-ltm" secondAttribute="bottom" constant="3" id="Ibl-tv-q6n"/>
+                                <constraint firstItem="TCe-tt-ltm" firstAttribute="top" secondItem="1Fk-EM-HRs" secondAttribute="bottom" constant="11" id="JaP-qa-PJA"/>
+                                <constraint firstAttribute="centerX" secondItem="TCe-tt-ltm" secondAttribute="centerX" id="Lmf-q0-s3U"/>
+                                <constraint firstItem="TCe-tt-ltm" firstAttribute="top" secondItem="CuJ-Di-PoK" secondAttribute="bottom" constant="6" id="VtR-An-HfO"/>
+                                <constraint firstItem="4Ax-Xw-Ed3" firstAttribute="leading" secondItem="gFe-dA-tqI" secondAttribute="leading" constant="8" id="bc8-L0-VWj"/>
+                                <constraint firstAttribute="centerY" secondItem="TCe-tt-ltm" secondAttribute="centerY" constant="-42" id="nsH-tI-yti"/>
+                                <constraint firstAttribute="centerX" secondItem="1Fk-EM-HRs" secondAttribute="centerX" constant="-31.5" id="upM-PL-pxw"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZoK-n8-gla">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZoK-n8-gla" id="7bW-JE-9aY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gEv-tw-lI0" id="Clu-Dg-abP"/>
+                            <outlet property="delegate" destination="gEv-tw-lI0" id="afn-w8-mjE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="snZ-x9-76Q"/>
+                    <connections>
+                        <outlet property="currentPrecipitationLabel" destination="4Ax-Xw-Ed3" id="fL6-s8-Njg"/>
+                        <outlet property="currentTemperatureLabel" destination="1Fk-EM-HRs" id="Fum-ef-nOm"/>
+                        <outlet property="currentTemperatureRangeLabel" destination="vF2-GD-3d4" id="ybV-Z7-xrd"/>
+                        <outlet property="currentWeatherIcon" destination="CuJ-Di-PoK" id="gX3-sp-dqw"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11O-sY-ONL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-532" y="284"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -139,10 +222,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="148" y="284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UWi-e9-WRg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ETO-Mc-8DL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rj8-3a-9yJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gEv-tw-lI0" kind="relationship" relationship="rootViewController" id="S6O-RV-ZKI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A5K-bk-C69" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1344" y="284"/>
         </scene>
     </scenes>
     <resources>
-        <image name="default" width="30" height="30"/>
+        <image name="clear-day" width="58" height="60"/>
+        <image name="default" width="28" height="28"/>
         <image name="refresh" width="43" height="43"/>
     </resources>
 </document>

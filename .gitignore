@@ -43,4 +43,4 @@ xcuserdata
 Carthage/Build
 #Project  specific
 Project Assets/*
-ProjectAssets.zip
+ProjectAssets*.zip
