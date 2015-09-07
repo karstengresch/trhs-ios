@@ -10,13 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  @IBOutlet weak var currentTemperatureLabel: UILabel?
-  @IBOutlet weak var currentHumidityLabel: UILabel?
-  @IBOutlet weak var currentPrecipitationLabel: UILabel?
-  @IBOutlet weak var currentWeatherIcon: UIImageView?
-  @IBOutlet weak var currentWeatherSummary: UILabel?
-  @IBOutlet weak var refreshButton: UIButton?
-  @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
+
   
   
   let coordinate: (latitude: Double, longitude: Double) = (37.8267,-122.423)
@@ -26,7 +20,7 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    retreiveWeatherForecast()
+
   }
 
   override func didReceiveMemoryWarning() {
@@ -34,58 +28,7 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  func retreiveWeatherForecast() {
-    let forecastService = ForecastService(APIKey: forecastAPIKey)
-    forecastService.getForecast(coordinate.latitude, longitude: coordinate.longitude) {
-      (let currently) in
-      
-      if let currentWeather = currently {
-        dispatch_async(dispatch_get_main_queue()) {
-          
-          if let temperature = currentWeather.temperature {
-            self.currentTemperatureLabel?.text = "\(temperature)°"
-          }
-          
-          if let humidity = currentWeather.humidity {
-            self.currentHumidityLabel?.text = "\(humidity)%"
-          }
-          
-          if let precipitation = currentWeather.precipProbability {
-            self.currentPrecipitationLabel?.text = "\(precipitation)"
-          }
-          
-          if let icon = currentWeather.icon {
-            self.currentWeatherIcon?.image = icon
-          }
-          
-          if let summary = currentWeather.summary {
-            self.currentWeatherSummary?.text = summary
-          }
-          
-          self.toggleRefreshAnimation(false)
-          
-        }
-      }
-      
-    }
-  }
-  
-  func toggleRefreshAnimation(on: Bool) {
-    refreshButton?.hidden = on
-    if on {
-      activityIndicator?.startAnimating()
-    } else {
-      activityIndicator?.stopAnimating()
-    }
-  }
-  
-  
-  
-  
-  @IBAction func refreshWeather(sender: UIButton) {
-    toggleRefreshAnimation(true)
-    retreiveWeatherForecast()
-  }
+ 
 
 
 }
