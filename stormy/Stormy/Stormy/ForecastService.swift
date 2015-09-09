@@ -19,15 +19,17 @@ struct ForecastService {
     
   }
   
-  func getForecast(latitude: Double, longitude: Double, completion: (CurrentWeather? -> Void)) {
+  func getForecast(latitude: Double, longitude: Double, completion: (Forecast? -> Void)) {
     
     if let forecastURL = NSURL(string: "\(latitude),\(longitude)", relativeToURL: forecastBaseURL) {
       println("forecastBaseURL is: \(forecastBaseURL)")
+      
       let networkOperation = NetworkOperation(url: forecastURL)
+      
       networkOperation.downloadJSONFromURL {
         (let JSONDictionary) in
-        let currentWeather = self.currentWeatherFromJsonDictionary(JSONDictionary)
-        completion(currentWeather)
+        let forecast = Forecast(weatherDictionary: JSONDictionary)
+        completion(forecast)
       }
       
     } else {
@@ -36,17 +38,17 @@ struct ForecastService {
     
   }
   
-  func currentWeatherFromJsonDictionary(jsonDictionary: [String: AnyObject]?) -> CurrentWeather? {
-    
-    if let currentWeatherDictionary = jsonDictionary?["currently"] as? [String: AnyObject] {
-      return CurrentWeather(weatherDictionary: currentWeatherDictionary)
-    } else
-    {
-      println("JSON dictionary returned nil for \"currently\" key.")
-      return nil
-      
-    }
-  }
+//  func currentWeatherFromJsonDictionary(jsonDictionary: [String: AnyObject]?) -> CurrentWeather? {
+//    
+//    if let currentWeatherDictionary = jsonDictionary?["currently"] as? [String: AnyObject] {
+//      return CurrentWeather(weatherDictionary: currentWeatherDictionary)
+//    } else
+//    {
+//      println("JSON dictionary returned nil for \"currently\" key.")
+//      return nil
+//      
+//    }
+//  }
   
   
 }
