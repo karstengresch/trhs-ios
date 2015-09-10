@@ -33,6 +33,9 @@ class WeeklyTableViewController: UITableViewController {
   
   func configureView() {
     tableView.backgroundView = BackgroundView()
+    
+    // custom height for table view row 
+    tableView.rowHeight = 64
 
     if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
       let navBarAttributesDictionary: [NSObject: AnyObject]? = [
@@ -47,16 +50,24 @@ class WeeklyTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return weeklyWeather.count
     }
+  
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell") as! UITableViewCell
+    
+    let dailyWeather = weeklyWeather[indexPath.row]
+    cell.textLabel?.text = dailyWeather.day
+    
+    return cell
+  }
   
   // MARK: Weather Fetching
   
@@ -88,6 +99,8 @@ class WeeklyTableViewController: UITableViewController {
           if let highTemperature = self.weeklyWeather.first?.maxTemperature, let lowTemperature = self.weeklyWeather.first?.minTemperature {
             self.currentTemperatureRangeLabel?.text = "↑\(highTemperature)° ↓\(lowTemperature)°"
           }
+          
+          self.tableView.reloadData()
           
         }
       }
