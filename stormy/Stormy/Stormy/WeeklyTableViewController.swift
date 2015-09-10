@@ -53,6 +53,10 @@ class WeeklyTableViewController: UITableViewController {
         // Return the number of sections.
         return 1
     }
+  
+  override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return "Forecast"
+  }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
@@ -61,12 +65,38 @@ class WeeklyTableViewController: UITableViewController {
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell") as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell") as! DailyWeatherTableViewCell
     
     let dailyWeather = weeklyWeather[indexPath.row]
-    cell.textLabel?.text = dailyWeather.day
+    if let maxTemperature = dailyWeather.maxTemperature {
+      cell.temperatureLabel.text = "\(maxTemperature)°"
+    }
+    
+    cell.weatherIcon.image = dailyWeather.icon
+    
+    cell.dayLabel.text = dailyWeather.day
     
     return cell
+  }
+  
+  // MARK: Delegate Methods
+  
+  override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    view.tintColor = UIColor(red: 61.9/255.0, green: 96.5/255.0, blue: 185.9/255.0, alpha: 1.0)
+    
+    if let header = view as? UITableViewHeaderFooterView {
+      header.textLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 14.0)
+      header.textLabel.textColor = UIColor.whiteColor()
+      
+    }
+  }
+  
+  override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+    var cell = tableView.cellForRowAtIndexPath(indexPath)
+    cell?.contentView.backgroundColor = UIColor(red: 47.7/255.0, green: 73.6/255.0, blue: 171.4/255.0, alpha: 0.77)
+    let highlightView = UIView()
+    highlightView.backgroundColor = UIColor(red: 47.7/255.0, green: 73.6/255.0, blue: 171.4/255.0, alpha: 0.77)
+    cell?.selectedBackgroundView = highlightView
   }
   
   // MARK: Weather Fetching

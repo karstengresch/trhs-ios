@@ -10,7 +10,7 @@
         <scene sceneID="vca-KT-oEA">
             <objects>
                 <tableViewController id="gEv-tw-lI0" customClass="WeeklyTableViewController" customModule="Stormy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wyx-yj-D1G">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wyx-yj-D1G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,7 +107,13 @@
                                         <constraint firstItem="IJc-5m-O3U" firstAttribute="leading" secondItem="RCb-V5-Bh9" secondAttribute="trailing" constant="23" id="lPk-9k-BEB"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.53333333329999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dayLabel" destination="IJc-5m-O3U" id="8bR-JP-hJ5"/>
+                                    <outlet property="temperatureLabel" destination="uEh-M1-ANr" id="VTj-ig-hqf"/>
+                                    <outlet property="weatherIcon" destination="RCb-V5-Bh9" id="web-CT-CIO"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="Tga-By-fAv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -121,7 +127,6 @@
                         <outlet property="currentTemperatureLabel" destination="1Fk-EM-HRs" id="Fum-ef-nOm"/>
                         <outlet property="currentTemperatureRangeLabel" destination="vF2-GD-3d4" id="ybV-Z7-xrd"/>
                         <outlet property="currentWeatherIcon" destination="CuJ-Di-PoK" id="gX3-sp-dqw"/>
-                        <segue destination="vXZ-lx-hvc" kind="show" identifier="detailWeatherSegue" id="GIB-gE-6Oo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11O-sY-ONL" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,7 +10,12 @@ import UIKit
 
 class DailyWeatherTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet weak var temperatureLabel: UILabel!
+  @IBOutlet weak var weatherIcon: UIImageView!
+  @IBOutlet weak var dayLabel: UILabel!
+  
+  
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
