@@ -31,6 +31,7 @@ class WeeklyTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
   
+
   func configureView() {
     tableView.backgroundView = BackgroundView()
     
@@ -44,7 +45,17 @@ class WeeklyTableViewController: UITableViewController {
       ]
       navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
     }
+    
+    // Position refresh control above background view
+    refreshControl?.layer.zPosition = tableView.backgroundView!.layer.zPosition + 1
+    refreshControl?.tintColor = UIColor.whiteColor()
+    
 
+  }
+  
+  @IBAction func refreshWeather(sender: UIRefreshControl) {
+    retreiveWeatherForecast()
+    refreshControl?.endRefreshing()
   }
 
     // MARK: - Table view data source
