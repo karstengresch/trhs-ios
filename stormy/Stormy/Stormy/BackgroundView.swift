@@ -22,13 +22,13 @@ class BackgroundView: UIView {
       let context = UIGraphicsGetCurrentContext()
       
       //// Gradient Declarations
-      let purpleGradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [lightBlue.CGColor, darkBlue.CGColor], [0, 1])
+      let blueGradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [lightBlue.CGColor, darkBlue.CGColor], [0, 1])
       
       //// Background Drawing
       let backgroundPath = UIBezierPath(rect: CGRectMake(0, 0, self.frame.width, self.frame.height))
       CGContextSaveGState(context)
       backgroundPath.addClip()
-      CGContextDrawLinearGradient(context, purpleGradient,
+      CGContextDrawLinearGradient(context, blueGradient,
         CGPointMake(160, 0),
         CGPointMake(160, 568),
         UInt32(kCGGradientDrawsBeforeStartLocation) | UInt32(kCGGradientDrawsAfterEndLocation))

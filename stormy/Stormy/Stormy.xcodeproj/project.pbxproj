@@ -15,6 +15,8 @@
 		3D21959A1B90474B0078FA94 /* CurrentWeather.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D2195991B90474B0078FA94 /* CurrentWeather.plist */; };
 		3D21959C1B9047E10078FA94 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D21959B1B9047E10078FA94 /* CurrentWeather.swift */; };
 		3D491FB91BA2151D0002583A /* DailyWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D491FB81BA2151D0002583A /* DailyWeatherTableViewCell.swift */; };
+		3D990AB21BA2CD6100A5E9A9 /* DailyWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D990AB11BA2CD6100A5E9A9 /* DailyWeatherViewController.swift */; };
+		3D990AB41BA2D7B600A5E9A9 /* DetailBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D990AB31BA2D7B600A5E9A9 /* DetailBackgroundView.swift */; };
 		3DB8DDBA1B94921B00F02B33 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8DDB91B94921B00F02B33 /* NetworkOperation.swift */; };
 		3DC7E5F01B9B843B0037EB48 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC7E5EF1B9B843B0037EB48 /* WeeklyTableViewController.swift */; };
 		3DC7E5F21B9B854F0037EB48 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC7E5F11B9B854F0037EB48 /* BackgroundView.swift */; };
@@ -48,6 +50,8 @@
 		3D2195991B90474B0078FA94 /* CurrentWeather.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentWeather.plist; sourceTree = "<group>"; };
 		3D21959B1B9047E10078FA94 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		3D491FB81BA2151D0002583A /* DailyWeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		3D990AB11BA2CD6100A5E9A9 /* DailyWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherViewController.swift; sourceTree = "<group>"; };
+		3D990AB31BA2D7B600A5E9A9 /* DetailBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBackgroundView.swift; sourceTree = "<group>"; };
 		3DB8DDB91B94921B00F02B33 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		3DC7E5EF1B9B843B0037EB48 /* WeeklyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewController.swift; sourceTree = "<group>"; };
 		3DC7E5F11B9B854F0037EB48 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			children = (
 				3D2195791B90443C0078FA94 /* ViewController.swift */,
 				3DC7E5EF1B9B843B0037EB48 /* WeeklyTableViewController.swift */,
+				3D990AB11BA2CD6100A5E9A9 /* DailyWeatherViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				3D21957B1B90443C0078FA94 /* Main.storyboard */,
 				3DC7E5F11B9B854F0037EB48 /* BackgroundView.swift */,
 				3D491FB81BA2151D0002583A /* DailyWeatherTableViewCell.swift */,
+				3D990AB31BA2D7B600A5E9A9 /* DetailBackgroundView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -281,10 +287,12 @@
 				3D21957A1B90443C0078FA94 /* ViewController.swift in Sources */,
 				3DC7E5F91B9E273B0037EB48 /* Icon.swift in Sources */,
 				3DC7E5FB1BA079CE0037EB48 /* Forecast.swift in Sources */,
+				3D990AB21BA2CD6100A5E9A9 /* DailyWeatherViewController.swift in Sources */,
 				3DC7E5F01B9B843B0037EB48 /* WeeklyTableViewController.swift in Sources */,
 				3DC7E5F21B9B854F0037EB48 /* BackgroundView.swift in Sources */,
 				3D21959C1B9047E10078FA94 /* CurrentWeather.swift in Sources */,
 				3DFB55951B957F7B00EB91B9 /* ForecastService.swift in Sources */,
+				3D990AB41BA2D7B600A5E9A9 /* DetailBackgroundView.swift in Sources */,
 				3D2195781B90443C0078FA94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

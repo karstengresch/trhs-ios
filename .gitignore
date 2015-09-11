@@ -44,3 +44,6 @@ Carthage/Build
 #Project  specific
 Project Assets/*
 ProjectAssets*.zip
+
+./.idea
+.idea

@@ -57,8 +57,19 @@ class WeeklyTableViewController: UITableViewController {
     retreiveWeatherForecast()
     refreshControl?.endRefreshing()
   }
+  
+  // MARK: Navigation
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "showDailyWeather" {
+      if let indexPath = tableView.indexPathForSelectedRow() {
+        let dailyWeather = weeklyWeather[indexPath.row]
+        (segue.destinationViewController as! DailyWeatherViewController).dailyWeather = dailyWeather
+      }
+    }
+  }
+  
 
-    // MARK: - Table view data source
+  // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.

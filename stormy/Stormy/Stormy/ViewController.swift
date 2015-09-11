@@ -9,13 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-  
-
-  
-  
-  let coordinate: (latitude: Double, longitude: Double) = (37.8267,-122.423)
-
-  private let forecastAPIKey = "830b7f5b95cc1d9c4c511ba42ffb6eb5"
 
 
   override func viewDidLoad() {
