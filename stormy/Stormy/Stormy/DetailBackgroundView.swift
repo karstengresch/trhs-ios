@@ -14,9 +14,7 @@ class DetailBackgroundView: UIView {
     //// Color Declarations
     let lightBlue: UIColor = UIColor(hue:0.619, saturation:1, brightness:0.978, alpha:0.4)
     let darkBlue: UIColor = UIColor(hue:0.6, saturation:0.86, brightness:0.548, alpha:1)
-    
     let context = UIGraphicsGetCurrentContext()
-    
     //// Gradient Declarations
     let blueGradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [lightBlue.CGColor, darkBlue.CGColor], [0, 1])
     
@@ -31,7 +29,6 @@ class DetailBackgroundView: UIView {
     CGContextRestoreGState(context)
     
     //// Sun Path
-    
     let circleOrigin = CGPointMake(0, 0.75 * self.frame.height)
     let circleSize = CGSizeMake(self.frame.width, 0.55 * self.frame.height)
     
