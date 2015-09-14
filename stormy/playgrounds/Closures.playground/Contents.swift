@@ -18,3 +18,53 @@ someFunction("Hiya")
 //
 //printInt(numberOfApples)
 
+func displayString(printStringFunc: (String) -> Void) {
+  printStringFunc("I'm a function inside another function")
+}
+
+displayString(printString)
+
+let allNumbers = [1,2,3,4,5,6,7,8,9,10]
+
+func isEvenNumber(number: Int) -> Bool {
+  return number % 2 == 0
+}
+
+isEvenNumber(-9000)
+
+let ifEven = isEvenNumber
+let evenNumbers = allNumbers.filter(ifEven)
+
+// own
+
+let someString = ["Makka", "Mokko", "Adelaide", "Omnicomni", "Marconi", "Serpent", "Zucchini", "Pasta", "Dolci", "Aurum", "Persistence"]
+
+func containsMagicString(haystack: String) -> Bool {
+  return contains(haystack, "a")
+}
+
+let getMagic = containsMagicString
+
+let magicWords = someString.filter(getMagic)
+
+// let getDynaMagic = contains
+// let dynaMagicWords = someString.filter(<#includeElement: String -> Bool##String -> Bool#>)
+
+// Returning Functions
+
+
+func printerFunction() -> (Int) -> () {
+  func printInteger(number: Int) {
+    println("The integer passed in is: \(number)")
+  }
+  return printInteger
+}
+
+let printAndReturnIntegerFunc = printerFunction()
+
+printAndReturnIntegerFunc(2)
+
+
+
+
+
