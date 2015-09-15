@@ -88,9 +88,21 @@ doubleFunction(3)
 
 let doubledNumbers = allNumbers.map(doubleFunction)
 
+// clsr expression w/ map func
+let tripledNumber = allNumbers.map( { (i: Int) -> Int in return i * 3 } )
 
+// clrs expressions w/ sorted func
+var names = ["Dan", "Corinna", "Chordelia", "Clonalia", "Dubidu", "Matthew", "Herman"]
 
+func backwards(firstString: String, secondString: String) -> Bool {
+  return firstString > secondString
+}
 
+// sorted(names, backwards)
+
+let sortedNames = sorted(names, { firstString: String, secondString: String) -> Bool in return firstString > secondString } )
+
+println(sortedNames)
 
 
 
