@@ -47,7 +47,20 @@ let getMagic = containsMagicString
 
 let magicWords = someString.filter(getMagic)
 
+// Challenge
+func differenceBetweenNumbers(firstNumber: Int, secondNumber: Int) -> (Int) {
+  return firstNumber - secondNumber
+}
+
+func mathOperation(differenceBetweenNumbers: (Int, Int) -> Int, firstNumber: Int,secondNumber: Int) -> Int {
+  return differenceBetweenNumbers(firstNumber, secondNumber)
+}
+
+let difference = mathOperation(differenceBetweenNumbers, 4,8)
+
 // Returning Functions
+
+
 
 
 func printerFunction() -> (Int) -> () {
