@@ -47,9 +47,6 @@ let getMagic = containsMagicString
 
 let magicWords = someString.filter(getMagic)
 
-// let getDynaMagic = contains
-// let dynaMagicWords = someString.filter(<#includeElement: String -> Bool##String -> Bool#>)
-
 // Returning Functions
 
 
@@ -62,7 +59,23 @@ func printerFunction() -> (Int) -> () {
 
 let printAndReturnIntegerFunc = printerFunction()
 
+
+
 printAndReturnIntegerFunc(2)
+
+// Closure Expressions
+
+func doubler(integer: Int) -> Int {
+  return integer * 2
+}
+
+let doubleFunction = doubler
+
+doubleFunction(3)
+
+let doubledNumbers = allNumbers.map(doubleFunction)
+
+
 
 
 
