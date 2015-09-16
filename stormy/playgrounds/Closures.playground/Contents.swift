@@ -138,6 +138,17 @@ let tripleFunction = { (intNumber: Int) -> Int in return intNumber * 3 }
 // Rule #6 Ignoring parentheses
 [1,2,3,4,5,6,7].map { $0 * 3 }
 
+// Challenge
+let numbers = [Int](0...50)
+
+func isOdd(i: Int) -> Bool {
+  return i % 2 != 0
+}
+
+let oddNumbers = numbers.filter(isOdd)
+
+
+
 
 
 
