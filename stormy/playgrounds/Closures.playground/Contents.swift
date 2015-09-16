@@ -100,9 +100,46 @@ func backwards(firstString: String, secondString: String) -> Bool {
 
 // sorted(names, backwards)
 
-let sortedNames = sorted(names, { firstString: String, secondString: String) -> Bool in return firstString > secondString } )
+let sortedNames = sorted(names, { (firstString: String, secondString: String) -> Bool in return firstString > secondString } )
 
 println(sortedNames)
+
+
+// Closure Shorthand Syntax
+
+let tripleFunction = { (intNumber: Int) -> Int in return intNumber * 3 }
+[1,2,3,4,5,6,7].map(tripleFunction)
+// Rule #1
+[1,2,3,4,5,6,7].map({ (intNumber: Int) -> Int in return intNumber * 3 })
+
+// Rule #2 inferring type from context
+[1,2,3,4,5,6,7].map({ intNumber in return intNumber * 3 })
+
+// Rule #3 implicit returns from single expression closures
+[1,2,3,4,5,6,7].map({ intNumber in intNumber * 3 })
+
+// Rule #4 shorthand argument names: $0 - first arg, $1, 2nd etc.
+[1,2,3,4,5,6,7].map({ $0 * 3 })
+
+// Rule #5 trailing closures (esp. for long closures
+[1,2,3,4,5,6,7].map() { $0 * 3 }
+
+[1,2,3,4,5,6,7].map() {
+(var digit) -> Int in
+  // let returnValue = digit % 2 == 0 ? digit/2 : digit
+  // return returnValue
+  if digit % 2 == 0 {
+    return digit/2
+  } else {
+    return digit
+  }
+}
+
+// Rule #6 Ignoring parentheses
+[1,2,3,4,5,6,7].map { $0 * 3 }
+
+
+
 
 
 
