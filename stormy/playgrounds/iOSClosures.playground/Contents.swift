@@ -30,3 +30,9 @@ let downloadTaskShorthand = session.downloadTaskWithRequest(request) {
 
 downloadTask.resume()
 
+// Typealias
+typealias JSONDictionaryCompletion = ([String:AnyObject]?) -> ())
+
+func downloadJSONFromURL (completion: ([String:AnyObject]?) -> () ) {
+  
+}
