@@ -1,7 +1,7 @@
 //: Closures
 
 func printString(aString: String) {
-  println("Printing the passed string: \(aString)")
+  print("Printing the passed string: \(aString)")
 }
 
 printString("Hi, my lovely")
@@ -40,7 +40,7 @@ let evenNumbers = allNumbers.filter(ifEven)
 let someString = ["Makka", "Mokko", "Adelaide", "Omnicomni", "Marconi", "Serpent", "Zucchini", "Pasta", "Dolci", "Aurum", "Persistence"]
 
 func containsMagicString(haystack: String) -> Bool {
-  return contains(haystack, "a")
+  return haystack.characters.contains("a")
 }
 
 let getMagic = containsMagicString
@@ -56,7 +56,7 @@ func mathOperation(differenceBetweenNumbers: (Int, Int) -> Int, firstNumber: Int
   return differenceBetweenNumbers(firstNumber, secondNumber)
 }
 
-let difference = mathOperation(differenceBetweenNumbers, 4,8)
+let difference = mathOperation(differenceBetweenNumbers, firstNumber: 4, secondNumber: 8)
 
 // Returning Functions
 
@@ -65,7 +65,7 @@ let difference = mathOperation(differenceBetweenNumbers, 4,8)
 
 func printerFunction() -> (Int) -> () {
   func printInteger(number: Int) {
-    println("The integer passed in is: \(number)")
+    print("The integer passed in is: \(number)")
   }
   return printInteger
 }
@@ -100,9 +100,9 @@ func backwards(firstString: String, secondString: String) -> Bool {
 
 // sorted(names, backwards)
 
-let sortedNames = sorted(names, { (firstString: String, secondString: String) -> Bool in return firstString > secondString } )
+let sortedNames = names.sort({ (firstString: String, secondString: String) -> Bool in return firstString > secondString } )
 
-println(sortedNames)
+print(sortedNames)
 
 
 // Closure Shorthand Syntax
