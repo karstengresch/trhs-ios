@@ -23,3 +23,10 @@ let downloadTask = session.downloadTaskWithRequest(request,
     // closure body execution
 })
 
+let downloadTaskShorthand = session.downloadTaskWithRequest(request) {
+  (let url, let response, let error) in
+  // closure body execution
+}
+
+downloadTask.resume()
+
