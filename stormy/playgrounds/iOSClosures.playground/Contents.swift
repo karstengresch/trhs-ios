@@ -36,3 +36,15 @@ typealias JSONDictionaryCompletion = ([String:AnyObject]?) -> ()
 func downloadJSONFromURL (completion: JSONDictionaryCompletion ) {
   
 }
+
+func getRecentBlogPosts(completion: (NSURLResponse? -> Void)) {
+  _ = session.downloadTaskWithRequest(request) {
+    (let url, let response, let error) in
+    completion(response)
+  }
+}
+
+getRecentBlogPosts {
+  (let response) in
+  
+}
