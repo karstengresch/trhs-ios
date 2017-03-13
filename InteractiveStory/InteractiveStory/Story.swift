@@ -19,3 +19,8 @@ enum Story {
   case droid
   case home
 }
+
+extension Story {
+  
+  
+}
