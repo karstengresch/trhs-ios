@@ -8,10 +8,17 @@
 
 import Foundation
 
-struct Page {
+class Page {
   let story: Story
   
   typealias Choice = (title: String, page: Page)
+  
+  var firstChoice: Choice?
+  var secondChoice: Choice?
+  
+  init(xStory: Story) {
+    story = xStory
+  }
   
 }
 
