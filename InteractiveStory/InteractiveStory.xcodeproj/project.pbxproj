@@ -12,6 +12,7 @@
 		3DE14B951E75DD2800AC1C4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE14B931E75DD2800AC1C4C /* Main.storyboard */; };
 		3DE14B971E75DD2800AC1C4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE14B961E75DD2800AC1C4C /* Assets.xcassets */; };
 		3DE14B9A1E75DD2800AC1C4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE14B981E75DD2800AC1C4C /* LaunchScreen.storyboard */; };
+		3DE14BA21E77283300AC1C4C /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE14BA11E77283300AC1C4C /* Story.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3DE14B961E75DD2800AC1C4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DE14B991E75DD2800AC1C4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DE14B9B1E75DD2800AC1C4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DE14BA11E77283300AC1C4C /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				3DE14B961E75DD2800AC1C4C /* Assets.xcassets */,
 				3DE14B981E75DD2800AC1C4C /* LaunchScreen.storyboard */,
 				3DE14B9B1E75DD2800AC1C4C /* Info.plist */,
+				3DE14BA11E77283300AC1C4C /* Story.swift */,
 			);
 			path = InteractiveStory;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				3DE14B921E75DD2800AC1C4C /* ViewController.swift in Sources */,
 				3DE14B901E75DD2800AC1C4C /* AppDelegate.swift in Sources */,
+				3DE14BA21E77283300AC1C4C /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +304,7 @@
 				3DE14BA01E75DD2800AC1C4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
