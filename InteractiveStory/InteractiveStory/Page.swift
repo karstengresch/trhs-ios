@@ -8,5 +8,10 @@
 
 import Foundation
 
-
+struct Page {
+  let story: Story
+  
+  typealias Choice = (title: String, page: Page)
+  
+}
 
