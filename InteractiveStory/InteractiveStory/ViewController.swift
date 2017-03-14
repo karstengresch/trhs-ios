@@ -12,7 +12,12 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    let story = Page(xStory: .touchDown)
+    story.firstChoice = (title: "Some Title", page: Page(story: .droid))
+    
+    
+    
   }
 
   override func didReceiveMemoryWarning() {
