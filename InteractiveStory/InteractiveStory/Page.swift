@@ -51,6 +51,9 @@ struct Adventure {
     let touchdown = returnTrip.addChoiceWith(title: "Stop and Investigate", story: .touchDown)
     let homeward = returnTrip.addChoiceWith(title: "Continue home to earth", story: .homeward)
     
+    let rower = touchdown.addChoiceWith(title: "Explore the Rover", story: .rover)
+    let crate = touchdown.addChoiceWith(title: "Open the Crate", story: .crate)
+    
     return returnTrip
   }
   
