@@ -44,3 +44,11 @@ extension Page {
   
 }
 
+struct Adventure {
+  static var story: Page {
+    let returnTrip = Page(xStory: .returnTrip)
+    return returnTrip
+  }
+  
+}
+
