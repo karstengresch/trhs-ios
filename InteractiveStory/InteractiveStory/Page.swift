@@ -22,3 +22,8 @@ class Page {
   
 }
 
+extension Page {
+  
+  
+}
+
