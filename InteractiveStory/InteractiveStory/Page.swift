@@ -27,11 +27,8 @@ extension Page {
     
     switch(firstChoice, secondChoice) {
       case(.some, .some): return page
-      case(.none, .none): firstChoice = (title, page)
+      case(.none, .none), (.none, .some): firstChoice = (title, page)
       case(.some, .none): secondChoice = (title, page)
-      case(.none, .some): firstChoice = (title, page)
-      
-      
     }
     
     return page
