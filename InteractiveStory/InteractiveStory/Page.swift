@@ -23,6 +23,18 @@ class Page {
 }
 
 extension Page {
+  func addChoiceWith(title: String, page: Page) -> Page {
+    
+    guard firstChoice != nil && secondChoice != nil else { return self }
+    
+    if firstChoice == nil {
+      firstChoice = (title, page)
+    } else {
+      secondChoice = (title, page)
+    }
+    
+    return page
+  }
   
   
 }
