@@ -23,6 +23,13 @@ class Page {
 }
 
 extension Page {
+  
+  func addChoiceWith(title: String, story: Story) -> Page {
+    let page = Page(xStory: story)
+    return addChoiceWith(title: title, page: page)
+  }
+  
+  
   func addChoiceWith(title: String, page: Page) -> Page {
     
     switch(firstChoice, secondChoice) {
