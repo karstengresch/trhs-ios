@@ -47,6 +47,10 @@ extension Page {
 struct Adventure {
   static var story: Page {
     let returnTrip = Page(xStory: .returnTrip)
+    
+    let touchdown = returnTrip.addChoiceWith(title: "Stop and Investigate", story: .touchDown)
+    let homeward = returnTrip.addChoiceWith(title: "Continue home to earth", story: .homeward)
+    
     return returnTrip
   }
   
