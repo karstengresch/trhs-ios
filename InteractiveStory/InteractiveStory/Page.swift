@@ -49,10 +49,10 @@ struct Adventure {
     let returnTrip = Page(xStory: .returnTrip)
     
     let touchdown = returnTrip.addChoiceWith(title: "Stop and Investigate", story: .touchDown)
-    let homeward = returnTrip.addChoiceWith(title: "Continue home to earth", story: .homeward)
+    let homeward = returnTrip.addChoiceWith(title: "Continue home to Earth", story: .homeward)
     
     let rover = touchdown.addChoiceWith(title: "Explore the Rover", story: .rover)
-    let crate = touchdown.addChoiceWith(title: "Open the Crate", story: .crate)
+    let crate = touchdown.addChoiceWith(title: "Open the crate", story: .crate)
     
     homeward.addChoiceWith(title: "Head back to Mars", page: touchdown)
     let home = homeward.addChoiceWith(title: "Continue Home to Earth", story: .home)
@@ -68,6 +68,5 @@ struct Adventure {
     
     return returnTrip
   }
-  
 }
 
