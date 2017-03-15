@@ -16,6 +16,12 @@ class PageController: UIViewController {
     super.init(coder: aDecoder)
     
   }
+  
+  init(xPage: Page) {
+    page = xPage
+    super.init(nibName: nil, bundle: nil)
+    
+  }
 
     override func viewDidLoad() {
         super.viewDidLoad()
