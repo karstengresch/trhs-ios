@@ -31,7 +31,7 @@ extension Page {
   
   
   func addChoiceWith(title: String, page: Page) -> Page {
-    
+
     switch(firstChoice, secondChoice) {
       case(.some, .some): return page
       case(.none, .none), (.none, .some): firstChoice = (title, page)
@@ -51,7 +51,7 @@ struct Adventure {
     let touchdown = returnTrip.addChoiceWith(title: "Stop and Investigate", story: .touchDown)
     let homeward = returnTrip.addChoiceWith(title: "Continue home to earth", story: .homeward)
     
-    let rower = touchdown.addChoiceWith(title: "Explore the Rover", story: .rover)
+    let rover = touchdown.addChoiceWith(title: "Explore the Rover", story: .rover)
     let crate = touchdown.addChoiceWith(title: "Open the Crate", story: .crate)
     
     homeward.addChoiceWith(title: "Head back to Mars", page: touchdown)
