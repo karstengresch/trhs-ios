@@ -52,12 +52,10 @@ class PageController: UIViewController {
     view.addSubview(artworkView)
     artworkView.translatesAutoresizingMaskIntoConstraints = false
     
-    artworkView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-    
     NSLayoutConstraint.activate([
       artworkView.topAnchor.constraint(equalTo: view.topAnchor),
-      artworkView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-      artworkView.rightAnchor.constraint(equalTo: view.rightAnchor)
+      artworkView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      artworkView.rightAnchor.constraint(equalTo: view.rightAnchor),
       artworkView.leftAnchor.constraint(equalTo: view.leftAnchor)
       
       ])
