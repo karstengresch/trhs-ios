@@ -36,7 +36,7 @@ class PageController: UIViewController {
         view.backgroundColor = .blue
       
       if let page = page {
-        print(page.story.text)
+        artworkView.image = page.story.artwork
       }
       
     }
