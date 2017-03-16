@@ -47,6 +47,11 @@ class PageController: UIViewController {
   }
   
   override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    
+    view.addSubview(artworkView)
+    artworkView.translatesAutoresizingMaskIntoConstraints = false
+    
     
   }
   
