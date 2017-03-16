@@ -10,7 +10,15 @@ import UIKit
 
 class PageController: UIViewController {
   
-    var page: Page?
+  var page: Page?
+  
+  // MARK: User Interface Properties
+  let artworkView = UIImageView()
+  let storyLabel = UILabel()
+  let firstChoiceButton = UIButton(type: .system)
+  let secondChoiceButton = UIButton(type: .system)
+  
+  
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
