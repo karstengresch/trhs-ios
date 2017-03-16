@@ -46,4 +46,8 @@ class PageController: UIViewController {
 
   }
   
+  override func viewWillLayoutSubviews() {
+    
+  }
+  
 }
