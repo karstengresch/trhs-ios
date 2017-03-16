@@ -52,6 +52,9 @@ class PageController: UIViewController {
     view.addSubview(artworkView)
     artworkView.translatesAutoresizingMaskIntoConstraints = false
     
+    artworkView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    
+    
     
   }
   
