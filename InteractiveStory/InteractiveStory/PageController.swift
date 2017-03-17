@@ -15,6 +15,7 @@ class PageController: UIViewController {
   // MARK: User Interface Properties
   let artworkView: UIImageView = {
     let imageView = UIImageView()
+    imageView.translatesAutoresizingMaskIntoConstraints = false
     
     return imageView
   }()
@@ -26,9 +27,22 @@ class PageController: UIViewController {
     return label
   }()
   
-  let firstChoiceButton = UIButton(type: .system)
-  let secondChoiceButton = UIButton(type: .system)
+  let firstChoiceButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    
+    return button
   
+  }()
+
+  
+  let secondChoiceButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    
+    return button
+    
+  }()
   
   
   required init?(coder aDecoder: NSCoder) {
@@ -85,7 +99,6 @@ class PageController: UIViewController {
     super.viewWillLayoutSubviews()
     
     view.addSubview(artworkView)
-    artworkView.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       artworkView.topAnchor.constraint(equalTo: view.topAnchor),
