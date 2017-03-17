@@ -34,6 +34,8 @@ class PageController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    view.backgroundColor = .white
+    
     if let page = page {
       artworkView.image = page.story.artwork
       
