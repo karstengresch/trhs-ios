@@ -133,6 +133,7 @@ class PageController: UIViewController {
   }
   
   func playAgain() {
+    navigationController?.popToRootViewController(animated: true)
     
   }
   
