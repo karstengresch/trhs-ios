@@ -15,7 +15,9 @@ class PageController: UIViewController {
   // MARK: User Interface Properties
   let artworkView = UIImageView()
   let storyLabel: UILabel = {
-    label = UILabel()
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.numberOfLines = 0
     return label
   }()
   
@@ -89,16 +91,12 @@ class PageController: UIViewController {
       ])
     
     view.addSubview(storyLabel)
-    storyLabel.numberOfLines = 0
-    storyLabel.translatesAutoresizingMaskIntoConstraints = false
-    
+
     NSLayoutConstraint.activate([
       storyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
       storyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
       storyLabel.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -48.0)
-      
       ])
-    
     
     view.addSubview(firstChoiceButton)
     firstChoiceButton.translatesAutoresizingMaskIntoConstraints = false
