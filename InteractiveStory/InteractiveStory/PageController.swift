@@ -52,6 +52,8 @@ class PageController: UIViewController {
         
       } else {
         firstChoiceButton.setTitle("Play again!", for: .normal)
+        firstChoiceButton.addTarget(self, action: #selector(PageController.playAgain), for: .touchUpInside)
+        
       }
     }
     
