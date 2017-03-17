@@ -59,6 +59,16 @@ class PageController: UIViewController {
       
       ])
     
+    view.addSubview(storyLabel)
+    storyLabel.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+      storyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
+      storyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
+      storyLabel.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -48.0)
+      
+      ])
+    
     
   }
   
