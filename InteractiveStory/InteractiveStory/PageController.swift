@@ -13,7 +13,12 @@ class PageController: UIViewController {
   var page: Page?
   
   // MARK: User Interface Properties
-  let artworkView = UIImageView()
+  let artworkView: UIImageView = {
+    let imageView = UIImageView()
+    
+    return imageView
+  }()
+  
   let storyLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
