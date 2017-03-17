@@ -30,37 +30,37 @@ class PageController: UIViewController {
     super.init(nibName: nil, bundle: nil)
     
   }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if let page = page {
+      artworkView.image = page.story.artwork
       
-      if let page = page {
-        artworkView.image = page.story.artwork
-        
-        let attributedString = NSMutableAttributedString(string: page.story.text)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 10
-        attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
-        
-        storyLabel.attributedText = attributedString
-
-        if let firstChoice = page.firstChoice {
-          firstChoiceButton.setTitle(firstChoice.title, for: .normal)
-          
-        } else {
-          firstChoiceButton.setTitle("Play again!", for: .normal)
-        }
-       }
+      let attributedString = NSMutableAttributedString(string: page.story.text)
+      let paragraphStyle = NSMutableParagraphStyle()
+      paragraphStyle.lineSpacing = 10
+      attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
       
-      if let secondChoice = page?.secondChoice {
-        secondChoiceButton.setTitle(secondChoice.title, for: .normal)
+      storyLabel.attributedText = attributedString
+      
+      if let firstChoice = page.firstChoice {
+        firstChoiceButton.setTitle(firstChoice.title, for: .normal)
+        
+      } else {
+        firstChoiceButton.setTitle("Play again!", for: .normal)
       }
-      
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
+    
+    if let secondChoice = page?.secondChoice {
+      secondChoiceButton.setTitle(secondChoice.title, for: .normal)
+    }
+    
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    
   }
   
   override func viewWillLayoutSubviews() {
@@ -95,8 +95,8 @@ class PageController: UIViewController {
     NSLayoutConstraint.activate([
       firstChoiceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       firstChoiceButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80.0)
-    ])
-      
+      ])
+    
     view.addSubview(secondChoiceButton)
     secondChoiceButton.translatesAutoresizingMaskIntoConstraints = false
     
@@ -105,8 +105,26 @@ class PageController: UIViewController {
       secondChoiceButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32.0)
       
       ])
-    
-    
+  }
+  
+  func loadFirstChoice() {
+    if let page = page, let firstChoice = page.firstChoice {
+      let nextPage = firstChoice.page
+      let pageController = PageController(xPage: nextPage)
+      
+      navigationController?.pushViewController(pageController, animated: true)
+      
+    }
+  }
+  
+  func loadSecondChoice() {
+    if let page = page, let secondChoice = page.secondChoice {
+      let nextPage = secondChoice.page
+      let pageController = PageController(xPage: nextPage)
+      
+      navigationController?.pushViewController(pageController, animated: true)
+      
+    }
   }
   
 }
