@@ -132,4 +132,8 @@ class PageController: UIViewController {
     }
   }
   
+  func playAgain() {
+    
+  }
+  
 }
