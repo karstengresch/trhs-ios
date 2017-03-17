@@ -36,7 +36,14 @@ class PageController: UIViewController {
       
       if let page = page {
         artworkView.image = page.story.artwork
-        storyLabel.text = page.story.text
+        
+        let attributedString = NSMutableAttributedString(string: page.story.text)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 10
+        attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
+        
+        storyLabel.attributedText = attributedString
+                
       }
       
     }
@@ -61,13 +68,31 @@ class PageController: UIViewController {
       ])
     
     view.addSubview(storyLabel)
-    storyLabel.numberOfLines = 0 
+    storyLabel.numberOfLines = 0
     storyLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       storyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
       storyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
       storyLabel.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -48.0)
+      
+      ])
+    
+    
+    view.addSubview(firstChoiceButton)
+    firstChoiceButton.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+      firstChoiceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      firstChoiceButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80.0)
+    ])
+      
+    view.addSubview(secondChoiceButton)
+    secondChoiceButton.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+      secondChoiceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      secondChoiceButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32.0)
       
       ])
     
