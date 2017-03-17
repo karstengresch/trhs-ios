@@ -61,6 +61,7 @@ class PageController: UIViewController {
       ])
     
     view.addSubview(storyLabel)
+    storyLabel.numberOfLines = 0 
     storyLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
