@@ -36,6 +36,7 @@ class PageController: UIViewController {
       
       if let page = page {
         artworkView.image = page.story.artwork
+        storyLabel.text = page.story.text
       }
       
     }
