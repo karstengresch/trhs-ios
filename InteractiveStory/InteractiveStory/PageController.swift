@@ -14,7 +14,11 @@ class PageController: UIViewController {
   
   // MARK: User Interface Properties
   let artworkView = UIImageView()
-  let storyLabel = UILabel()
+  let storyLabel: UILabel = {
+    label = UILabel()
+    return label
+  }()
+  
   let firstChoiceButton = UIButton(type: .system)
   let secondChoiceButton = UIButton(type: .system)
   
