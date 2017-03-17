@@ -46,6 +46,7 @@ class PageController: UIViewController {
       
       if let firstChoice = page.firstChoice {
         firstChoiceButton.setTitle(firstChoice.title, for: .normal)
+        firstChoiceButton.addTarget(self, action: #selector(PageController.loadFirstChoice), for: .touchUpInside)
         
       } else {
         firstChoiceButton.setTitle("Play again!", for: .normal)
@@ -54,6 +55,8 @@ class PageController: UIViewController {
     
     if let secondChoice = page?.secondChoice {
       secondChoiceButton.setTitle(secondChoice.title, for: .normal)
+      secondChoiceButton.addTarget(self, action: #selector(PageController.loadSecondChoice), for: .touchUpInside)
+      
     }
     
   }
