@@ -8,6 +8,10 @@
 
 import UIKit
 
+extension NSAttributedString {
+
+}
+
 extension Story {
   var attributedText: NSAttributedString {
     let attributedString = NSMutableAttributedString(string: text)
