@@ -8,6 +8,11 @@
 
 import UIKit
 
+extension Story {
+
+}
+
+
 class PageController: UIViewController {
   
   var page: Page?
