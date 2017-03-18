@@ -16,6 +16,8 @@ extension Story {
     paragraphStyle.lineSpacing = 10
     
     attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
+    
+    return attributedString
   }
 }
 
