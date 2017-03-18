@@ -9,7 +9,9 @@
 import UIKit
 
 extension NSAttributedString {
-
+  var stringRange: NSRange {
+    return NSMakeRange(0, self.length)
+  }
 }
 
 extension Story {
@@ -19,7 +21,7 @@ extension Story {
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.lineSpacing = 10
     
-    attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
+    attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: attributedString.stringRange)
     
     return attributedString
   }
