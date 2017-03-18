@@ -10,16 +10,13 @@ import UIKit
 
 extension Story {
   var attributedText: NSAttributedString {
-    let attributedString = NSMutableAttributedString(string: page.story.text)
+    let attributedString = NSMutableAttributedString(string: text)
     
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.lineSpacing = 10
     
     attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
-    
-    
   }
-  
 }
 
 
