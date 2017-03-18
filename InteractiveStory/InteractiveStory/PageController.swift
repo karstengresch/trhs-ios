@@ -9,7 +9,17 @@
 import UIKit
 
 extension Story {
-
+  var attributedText: NSAttributedString {
+    let attributedString = NSMutableAttributedString(string: page.story.text)
+    
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.lineSpacing = 10
+    
+    attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
+    
+    
+  }
+  
 }
 
 
@@ -68,13 +78,6 @@ class PageController: UIViewController {
     
     if let page = page {
       artworkView.image = page.story.artwork
-      
-      let attributedString = NSMutableAttributedString(string: page.story.text)
-      
-      let paragraphStyle = NSMutableParagraphStyle()
-      paragraphStyle.lineSpacing = 10
-      
-      attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
       
       storyLabel.attributedText = attributedString
       
