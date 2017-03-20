@@ -27,6 +27,10 @@ extension Story {
   }
 }
 
+extension Page {
+  
+}
+
 
 class PageController: UIViewController {
   
