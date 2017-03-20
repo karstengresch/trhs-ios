@@ -52,10 +52,12 @@ class PageController: UIViewController {
     return imageView
   }()
   
-  let storyLabel: UILabel = {
+  lazy var storyLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.numberOfLines = 0
+    label.attributedText = self.page?.story(attributed: true)
+
     return label
   }()
   
@@ -95,9 +97,7 @@ class PageController: UIViewController {
     
     if let page = page {
       
-      storyLabel.attributedText = page.story(attributed: true)
-      
-      if let firstChoice = page.firstChoice {
+    if let firstChoice = page.firstChoice {
         firstChoiceButton.setTitle(firstChoice.title, for: .normal)
         firstChoiceButton.addTarget(self, action: #selector(PageController.loadFirstChoice), for: .touchUpInside)
         
