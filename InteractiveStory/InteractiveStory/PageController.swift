@@ -95,7 +95,7 @@ class PageController: UIViewController {
     if let page = page {
       artworkView.image = page.story.artwork
       
-      storyLabel.attributedText = attributedString
+      storyLabel.attributedText = page.story(attributed: true)
       
       if let firstChoice = page.firstChoice {
         firstChoiceButton.setTitle(firstChoice.title, for: .normal)
