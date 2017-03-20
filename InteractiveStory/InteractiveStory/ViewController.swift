@@ -14,10 +14,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     let story = Page(xStory: .touchDown)
-    story.firstChoice = (title: "Some Title", page: Page(xStory: .droid))
-    
-    
-    
+    story.firstChoice = (title: "Some Title", page: Page(xStory: .droid(name: "Droid")))
   }
 
   override func didReceiveMemoryWarning() {
