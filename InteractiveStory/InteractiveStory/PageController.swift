@@ -28,7 +28,9 @@ extension Story {
 }
 
 extension Page {
-  
+  func story(attributed: Bool) -> NSAttributedString {
+    
+  }
 }
 
 
