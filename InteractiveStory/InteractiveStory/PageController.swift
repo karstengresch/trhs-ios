@@ -103,17 +103,6 @@ class PageController: UIViewController {
     super.viewDidLoad()
     
     view.backgroundColor = .white
-    
-    if let page = page {
-      
-    
-    
-    if let secondChoice = page.secondChoice {
-      secondChoiceButton.setTitle(secondChoice.title, for: .normal)
-      secondChoiceButton.addTarget(self, action: #selector(PageController.loadSecondChoice), for: .touchUpInside)
-      }
-    }
-    
   }
   
   override func didReceiveMemoryWarning() {
