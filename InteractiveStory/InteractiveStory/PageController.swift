@@ -44,9 +44,10 @@ class PageController: UIViewController {
   var page: Page?
   
   // MARK: User Interface Properties
-  let artworkView: UIImageView = {
+  lazy var artworkView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.image = self.page?.story.artwork
     
     return imageView
   }()
@@ -93,7 +94,6 @@ class PageController: UIViewController {
     view.backgroundColor = .white
     
     if let page = page {
-      artworkView.image = page.story.artwork
       
       storyLabel.attributedText = page.story(attributed: true)
       
