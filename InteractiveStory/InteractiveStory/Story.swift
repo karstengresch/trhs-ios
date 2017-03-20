@@ -9,14 +9,14 @@
 import UIKit
 
 enum Story {
-  case returnTrip
+  case returnTrip(name: String)
   case touchDown
   case homeward
-  case rover
+  case rover(name: String)
   case cave
   case crate
   case monster
-  case droid
+  case droid(name: String)
   case home
 }
 
