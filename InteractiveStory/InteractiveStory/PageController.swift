@@ -29,7 +29,12 @@ extension Story {
 
 extension Page {
   func story(attributed: Bool) -> NSAttributedString {
-    
+    if attributed {
+      return story.attributedText
+    }
+    else {
+      return NSAttributedString(string: story.text)
+    }
   }
 }
 
