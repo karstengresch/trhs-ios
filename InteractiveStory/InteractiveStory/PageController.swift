@@ -68,6 +68,9 @@ class PageController: UIViewController {
     let title = self.page?.firstChoice?.title ?? "Play Again"
     let selector = self.page?.firstChoice != nil ? #selector(PageController.loadFirstChoice) : #selector(PageController.playAgain)
     
+    button.setTitle(title, for: .normal)
+    button.addTarget(self, action: selector, for: .touchUpInside)
+    
     return button
   
   }()
