@@ -61,9 +61,11 @@ class PageController: UIViewController {
     return label
   }()
   
-  let firstChoiceButton: UIButton = {
+  lazy var firstChoiceButton: UIButton = {
     let button = UIButton(type: .system)
     button.translatesAutoresizingMaskIntoConstraints = false
+    
+    let title = self.page?.firstChoice?.title ?? "Play Again"
     
     return button
   
