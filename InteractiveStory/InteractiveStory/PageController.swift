@@ -66,6 +66,7 @@ class PageController: UIViewController {
     button.translatesAutoresizingMaskIntoConstraints = false
     
     let title = self.page?.firstChoice?.title ?? "Play Again"
+    let selector = self.page?.firstChoice != nil ? #selector(PageController.loadFirstChoice) : #selector(PageController.playAgain)
     
     return button
   
