@@ -29,7 +29,8 @@ class ViewController: UIViewController {
         return
       }
       
-      pageController.page = Adventure.story
+      pageController.page = Adventure.story(withName: "Ugolina")
+      
     }
   }
 
