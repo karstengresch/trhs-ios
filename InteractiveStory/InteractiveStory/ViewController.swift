@@ -27,15 +27,24 @@ class ViewController: UIViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "startAdventure" {
-      guard let pageController = segue.destination as? PageController else {
-        return
+      
+      do {
+        if let name = nameTextField.text {
+          if ! name.isEmpty {
+            guard let pageController = segue.destination as? PageController else { return }
+            
+            pageController.page = Adventure.story(withName: "Ugolina")
+          } else {
+            throw AdventureError.nameNotProvided
+          }
+        } else {
+          throw AdventureError.nameNotProvided
+        }
+        catch let error {
+          
+        }
       }
-      
-      pageController.page = Adventure.story(withName: "Ugolina")
-      
     }
   }
-
-
 }
 
