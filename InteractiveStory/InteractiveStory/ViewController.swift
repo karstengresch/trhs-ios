@@ -40,6 +40,12 @@ class ViewController: UIViewController {
         }
       }
       catch let AdventureError.nameNotProvided {
+        let alertController = UIAlertController(title: "Name not provided", message: "Please provide a name", preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
+        
         
       }
     }
