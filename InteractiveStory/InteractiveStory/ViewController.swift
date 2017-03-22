@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
   @IBOutlet weak var nameTextField: UITextField!
   
   override func viewDidLoad() {
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     let story = Page(xStory: .touchDown)
     story.firstChoice = (title: "Some Title", page: Page(xStory: .droid(name: "Droid")))
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
       do {
         if let name = nameTextField.text {
           if name.isEmpty {
-              throw AdventureError.nameNotProvided
+            throw AdventureError.nameNotProvided
           } else {
             guard let pageController = segue.destination as? PageController else { return }
             
@@ -39,14 +39,15 @@ class ViewController: UIViewController {
           }
         }
       }
-      catch let AdventureError.nameNotProvided {
+      catch AdventureError.nameNotProvided {
         let alertController = UIAlertController(title: "Name not provided", message: "Please provide a name", preferredStyle: .alert)
         
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(alertAction)
         present(alertController, animated: true, completion: nil)
-        
-        
+      }
+      catch let error {
+        fatalError("\(error.localizedDescription)")
       }
     }
   }
