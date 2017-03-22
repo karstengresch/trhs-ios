@@ -58,7 +58,11 @@ class ViewController: UIViewController {
   }
 
   func keyboardWillShow(_ notification: Notification) {
-    print("Keyboard will show - \(notification.debugDescription) ")
+    // print("Keyboard will show - \(notification.debugDescription) ")
+    if let userInfo = notification.userInfo, let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+      let keyboardFrameRectangle = keyboardFrame.cgRectValue
+      textFieldBottomConstraint.constant = keyboardFrameRectangle.size.height + 10
+    }
   }
   
   deinit {
