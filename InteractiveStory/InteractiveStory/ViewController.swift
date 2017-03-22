@@ -62,6 +62,11 @@ class ViewController: UIViewController {
     if let userInfo = notification.userInfo, let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue {
       let keyboardFrameRectangle = keyboardFrame.cgRectValue
       textFieldBottomConstraint.constant = keyboardFrameRectangle.size.height + 10
+      
+      UIView.animate(withDuration: 0.8) {
+        self.view.layoutIfNeeded()
+      }
+      
     }
   }
   
