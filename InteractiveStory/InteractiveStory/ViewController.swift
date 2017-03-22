@@ -15,6 +15,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+    
     let story = Page(xStory: .touchDown)
     story.firstChoice = (title: "Some Title", page: Page(xStory: .droid(name: "Droid")))
   }
@@ -51,5 +53,9 @@ class ViewController: UIViewController {
       }
     }
   }
+}
+
+func keyboardWillShow(_ notification: Notification) {
+  
 }
 
