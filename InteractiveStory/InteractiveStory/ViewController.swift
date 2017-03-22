@@ -30,19 +30,17 @@ class ViewController: UIViewController {
       
       do {
         if let name = nameTextField.text {
-          if ! name.isEmpty {
+          if name.isEmpty {
+              throw AdventureError.nameNotProvided
+          } else {
             guard let pageController = segue.destination as? PageController else { return }
             
             pageController.page = Adventure.story(withName: "Ugolina")
-          } else {
-            throw AdventureError.nameNotProvided
           }
-        } else {
-          throw AdventureError.nameNotProvided
         }
-        catch let error {
-          
-        }
+      }
+      catch let AdventureError.nameNotProvided {
+        
       }
     }
   }
