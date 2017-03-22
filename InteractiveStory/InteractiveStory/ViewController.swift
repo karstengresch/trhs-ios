@@ -56,7 +56,11 @@ class ViewController: UIViewController {
   }
 
   func keyboardWillShow(_ notification: Notification) {
-    
+    print("Keyboard will show - \(notification.debugDescription) ")
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
 
   
