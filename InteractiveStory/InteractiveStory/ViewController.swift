@@ -75,4 +75,8 @@ class ViewController: UIViewController {
   
 }
 
+extension ViewController: UITextField {
+  
+}
+
 
