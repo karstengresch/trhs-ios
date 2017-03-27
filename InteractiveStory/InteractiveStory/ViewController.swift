@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
     
     
     let story = Page(xStory: .touchDown)
@@ -66,6 +67,10 @@ class ViewController: UIViewController {
         self.view.layoutIfNeeded()
       }
     }
+  }
+  
+  func keyboardWillHide(_ notification: Notification) {
+    
   }
   
   deinit {
