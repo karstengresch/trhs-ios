@@ -42,7 +42,7 @@ class ViewController: UIViewController {
           } else {
             guard let pageController = segue.destination as? PageController else { return }
             
-            pageController.page = Adventure.story(withName: name)
+            pageController.page = Adventure.story(withName: name.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
           }
         }
       }
