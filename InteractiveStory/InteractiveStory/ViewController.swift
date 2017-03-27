@@ -11,8 +11,9 @@ import UIKit
 class ViewController: UIViewController {
   
   @IBOutlet weak var nameTextField: UITextField!
-  
+  @IBOutlet weak var startButton: UIButton!
   @IBOutlet weak var textFieldBottomConstraint: NSLayoutConstraint!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -70,7 +71,12 @@ class ViewController: UIViewController {
   }
   
   func keyboardWillHide(_ notification: Notification) {
+      let startButtonRectangle = startButton.frame.standardized
+      textFieldBottomConstraint.constant = startButtonRectangle.size.height + 24
     
+      UIView.animate(withDuration: 0.8) {
+        self.view.layoutIfNeeded()
+      }
   }
   
   deinit {

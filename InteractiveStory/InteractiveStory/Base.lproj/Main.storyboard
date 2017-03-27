@@ -59,6 +59,7 @@
                     <navigationItem key="navigationItem" id="VDr-5Z-ewd"/>
                     <connections>
                         <outlet property="nameTextField" destination="9eF-DP-nYJ" id="RD6-95-bf7"/>
+                        <outlet property="startButton" destination="rSM-wr-0pz" id="RAb-vI-wNw"/>
                         <outlet property="textFieldBottomConstraint" destination="EMw-f4-GKK" id="n5M-Fu-kyV"/>
                     </connections>
                 </viewController>
