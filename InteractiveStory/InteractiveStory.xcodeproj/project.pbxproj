@@ -78,17 +78,17 @@
 		3DE14B8E1E75DD2800AC1C4C /* InteractiveStory */ = {
 			isa = PBXGroup;
 			children = (
+				3DE14B961E75DD2800AC1C4C /* Assets.xcassets */,
 				3DC0A0111E899871007942E1 /* Resources */,
+				3DC0A0181E899959007942E1 /* Audio.swift */,
 				3DE14B8F1E75DD2800AC1C4C /* AppDelegate.swift */,
 				3DE14B911E75DD2800AC1C4C /* ViewController.swift */,
 				3DE14B931E75DD2800AC1C4C /* Main.storyboard */,
-				3DE14B961E75DD2800AC1C4C /* Assets.xcassets */,
 				3DE14B981E75DD2800AC1C4C /* LaunchScreen.storyboard */,
 				3DE14B9B1E75DD2800AC1C4C /* Info.plist */,
 				3DE14BA11E77283300AC1C4C /* Story.swift */,
 				3DE14BA31E772E4F00AC1C4C /* Page.swift */,
 				3DA5AF3B1E79B5A8006E3A73 /* PageController.swift */,
-				3DC0A0181E899959007942E1 /* Audio.swift */,
 			);
 			path = InteractiveStory;
 			sourceTree = "<group>";

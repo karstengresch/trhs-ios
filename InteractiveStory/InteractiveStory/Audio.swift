@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import AudioToolbox
+
+extension Story {
+  var soundEffectUrl: URL {
+    
+  }
+}
+
+
+class SoundsEffectsPlayer {
+  var sound: SystemSoundID = 0
+  
+  
+}
