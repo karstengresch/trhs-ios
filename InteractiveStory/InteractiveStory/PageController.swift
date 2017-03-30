@@ -43,6 +43,8 @@ class PageController: UIViewController {
   
   
   var page: Page?
+  let soundsEffectsPlayer = SoundsEffectsPlayer()
+  
   
   // MARK: User Interface Properties
   lazy var artworkView: UIImageView = {
@@ -155,6 +157,8 @@ class PageController: UIViewController {
       let nextPage = firstChoice.page
       let pageController = PageController(xPage: nextPage)
       
+      soundsEffectsPlayer.playSound(for: firstChoice.page.story)
+      
       navigationController?.pushViewController(pageController, animated: true)
       
     }
@@ -164,6 +168,8 @@ class PageController: UIViewController {
     if let page = page, let secondChoice = page.secondChoice {
       let nextPage = secondChoice.page
       let pageController = PageController(xPage: nextPage)
+      
+      soundsEffectsPlayer.playSound(for: secondChoice.page.story)
       
       navigationController?.pushViewController(pageController, animated: true)
       

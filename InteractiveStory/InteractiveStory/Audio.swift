@@ -16,17 +16,14 @@ extension Story {
       case .droid, .home: return "HappyEnding"
       case .monster: return "Ominous"
       default: return "PageTurn"
-      
     }
   }
-  
   
   var soundEffectUrl: URL {
     let path = Bundle.main.path(forResource: soundEffectName, ofType: "wav")!
     return URL(fileURLWithPath: path)
   }
 }
-
 
 class SoundsEffectsPlayer {
   var sound: SystemSoundID = 0
@@ -35,6 +32,6 @@ class SoundsEffectsPlayer {
     let soundUrl = story.soundEffectUrl as CFURL
     
     AudioServicesCreateSystemSoundID(soundUrl, &sound)
-    
+    AudioServicesPlaySystemSound(sound)
   }
 }
